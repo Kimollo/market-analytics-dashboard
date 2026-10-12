@@ -2,6 +2,8 @@
 
 Live cryptocurrency market dashboard. It summarizes global market health, charts an asset across multiple timeframes, and lets you search the top 20 coins by market cap.
 
+**Live demo:** [https://market-analytics-dashboard-three.vercel.app/](https://market-analytics-dashboard-three.vercel.app/)
+
 ![React 18](https://img.shields.io/badge/React-18-149ECA?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
@@ -19,6 +21,14 @@ No API key is required. Data comes from the public CoinGecko REST API.
 - **Rate-limit resilience with auto-retry.** Identical in-flight requests are joined, successful responses are cached for 60 seconds, and a `429` is retried once after a short delay (or the `Retry-After` hint, when it is brief). If CoinGecko is still limiting requests, the screen keeps the last good data when it has some and shows a manual **Retry** button.
 
 The interface is a dark slate/zinc layout with skeleton placeholders, and it stacks cleanly on small screens. The market table scrolls horizontally on mobile.
+
+## Deployment
+
+The production app is hosted on Vercel:
+
+[https://market-analytics-dashboard-three.vercel.app/](https://market-analytics-dashboard-three.vercel.app/)
+
+Vercel builds the Vite app with `npm run build` and serves the `dist` output. CoinGecko is called from the browser, so no server environment variables are required.
 
 ## Local setup
 
